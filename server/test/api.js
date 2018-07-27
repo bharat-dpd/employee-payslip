@@ -98,7 +98,7 @@ describe('test employee payslip API', () => {
         chai.request(app)
             .post('/payslip')
             .send(taxpayloadFor_0_To_18200)
-            .end((err, res) => {
+            .then((res) => {
                 expect(res.status)
                     .to.equal(200);
                 done();
