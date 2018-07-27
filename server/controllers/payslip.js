@@ -4,7 +4,7 @@ const handler = (req, res, next) => {
     const validated = helpers.validatePayload(req.body);
     if (validated.isError) {
         return next({
-            status: 400,
+            status: helpers.errorCodes.badRequest,
             message: validated.message
         })
     } else {
